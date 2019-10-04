@@ -59,3 +59,4 @@ Data Generator/Product/vcruntime140d.dll
 Data Generator/Release/Data Generator.iobj
 Data Generator/Release/Data Generator.ipdb
 Data Generator/Release/Data Generator.pdb
+*.db
