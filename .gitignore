@@ -60,8 +60,19 @@ Data Generator/Release/Data Generator.iobj
 Data Generator/Release/Data Generator.ipdb
 Data Generator/Release/Data Generator.pdb
 *.db
+*.pdb
+*.ipdb
+*.iobj
+*.ipch
+*.obj
+*.tlog
+*.lastbuildstate
+Gurth Editor/Gurth Editor Launcher/packages/*
 Gurth Editor/Gurth Editor Launcher/Debug/Gurth Editor Launcher.ilk
 Gurth Editor/Gurth Editor Launcher/dll/Gurth Editor/Gurth Editor.exp
 Gurth Editor/Gurth Editor Launcher/dll/Gurth Editor/Gurth Editor.pdb
 Gurth Editor/Gurth Editor Launcher/Debug/Gurth Editor Launcher.pdb
 Gurth Editor/Gurth Editor Launcher/dll/Gurth Editor/Gurth Editor.ilk
+*.log
+*.idb
+*.opendb

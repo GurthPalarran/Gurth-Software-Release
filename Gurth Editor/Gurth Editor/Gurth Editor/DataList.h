@@ -55,5 +55,5 @@ public:
 	GurthMod TransCodeMod = INVERSE_TRANS_CODE;
 
 private:
-
+	CFont* PreFontSetting(CFont* NewFont);
 };

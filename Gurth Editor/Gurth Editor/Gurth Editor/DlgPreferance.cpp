@@ -77,13 +77,25 @@ void DlgPreferance::OnBnClickedOk()
 void DlgPreferance::OnBnClickedButtonFont()
 {
 	// TODO: 在此添加控件通知处理程序代码
-	CFontDialog FontDlg;
+	DlgMain* pDM = (DlgMain*)pDlgMain;
+	LOGFONT lgFont;
+	pDM->List.SystemSetting.FontList.CustomFont->GetLogFont(&lgFont);
+	CFontDialog FontDlg(&lgFont,
+		0
+		| CF_INITTOLOGFONTSTRUCT           //表示第一个参数有效
+		| CF_SCREENFONTS                   //屏幕字体
+		| CF_PRINTERFONTS                  //可以打印的字体
+		| CF_INACTIVEFONTS                 //隐藏的字体
+		| CF_EFFECTS                       //字体效果
+		| 0,
+		NULL, this);
 	if (IDOK == FontDlg.DoModal())
 	{
 		DlgMain* pDM = (DlgMain*)pDlgMain;
 		if(pDM->List.SystemSetting.FontList.CustomFont->m_hObject)
 			pDM->List.SystemSetting.FontList.CustomFont->DeleteObject();
 		pDM->List.SystemSetting.FontList.CustomFont->CreateFontIndirectW(FontDlg.m_cf.lpLogFont);
+		int a = 0;
 	}
 }
 

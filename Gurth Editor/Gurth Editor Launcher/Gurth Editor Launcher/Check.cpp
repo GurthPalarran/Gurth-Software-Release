@@ -46,6 +46,10 @@ BOOL CheckTheKey()
 		return FALSE;
 	}
 	*/
+#ifdef DEBUG
+	return TRUE;
+#endif // DEBUG
+
 	return FALSE;
 }
 

@@ -6,6 +6,7 @@ DataList::DataList()
 	SystemSetting.FontList.SourceCodePro12->CreatePointFont(120, L"Source Code Pro Semibold", NULL);
 	SystemSetting.FontList.Consolas12->CreatePointFont(120, L"Consolas", NULL);
 	SystemSetting.FontList.MSShellDlg10->CreatePointFont(100, L"MS Shell Dlg", NULL);
+	SystemSetting.FontList.CustomFont = PreFontSetting(SystemSetting.FontList.CustomFont);
 }
 
 DataList::~DataList()
@@ -71,4 +72,23 @@ void DataList::FileExist()
 		}
 	}
 	else IsFileExist = TRUE;
+}
+
+CFont* DataList::PreFontSetting(CFont* NewFont)
+{
+#ifdef _PRIMARY_
+	LOGFONT logfont = {0};
+	lstrcpy(logfont.lfFaceName, L"Source Code Pro");
+	logfont.lfWeight = 600;
+	logfont.lfWidth = 0;
+	logfont.lfHeight = -22;
+	logfont.lfEscapement = 0;
+	logfont.lfUnderline = FALSE;
+	logfont.lfItalic = FALSE;
+	logfont.lfStrikeOut = FALSE;
+	logfont.lfCharSet = UNICODE;	
+	NewFont->CreateFontIndirectW(&logfont);
+#endif // _PRIMARY_
+
+	return NewFont;
 }
