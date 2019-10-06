@@ -76,3 +76,6 @@ Gurth Editor/Gurth Editor Launcher/dll/Gurth Editor/Gurth Editor.ilk
 *.log
 *.idb
 *.opendb
+Gurth Editor/Gurth Editor/Gurth Editor/Debug/Gurth Editor.pch
+Gurth Editor/Gurth Editor Launcher/Gurth Editor Launcher/Debug/GurthEditorLauncher.res
+Gurth Editor/Gurth Editor Launcher/Gurth Editor Launcher/Debug/Gurth Editor Launcher.pch

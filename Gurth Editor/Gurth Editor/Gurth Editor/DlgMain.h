@@ -23,10 +23,9 @@ protected:
 	DECLARE_MESSAGE_MAP()
 public:
 	CEdit m_Buffer;
-	CString* tmpBuffer1 = new CString;
-	CString* tmpBuffer2 = new CString;
 	virtual BOOL OnInitDialog();
 	virtual BOOL PreTranslateMessage(MSG* pMsg);
+	void AutoTab();
 	BOOL SaveAS();
 	DataList List;
 	afx_msg void OnPaint();

@@ -73,9 +73,9 @@ BOOL DlgMain::OnInitDialog()
 	Buffer->Empty();
 
 	m_Buffer.SetFocus();
-	m_Buffer.SetFont(List.SystemSetting.FontList.SourceCodePro12);
+	m_Buffer.SetFont(List.SystemSetting.FontList.CustomFont);
 
-	m_Buffer.GetWindowTextW(*tmpBuffer1);
+	m_Buffer.SetTabStops(8);
 
 	return TRUE;  // return TRUE unless you set the focus to a control
 				  // 异常: OCX 属性页应返回 FALSE
@@ -85,8 +85,49 @@ BOOL DlgMain::OnInitDialog()
 BOOL DlgMain::PreTranslateMessage(MSG* pMsg)
 {
 	// TODO: 在此添加专用代码和/或调用基类
-
+	if (pMsg->message == WM_KEYDOWN && pMsg->wParam == VK_RETURN)
+	{
+		AutoTab();
+		return TRUE;
+	}
+	if (pMsg->message == WM_KEYDOWN && pMsg->wParam == VK_TAB)
+	{
+		m_Buffer.ReplaceSel(L"\t", FALSE);
+		return TRUE;
+	}
 	return CDialogEx::PreTranslateMessage(pMsg);
+}
+
+void DlgMain::AutoTab()
+{
+	wchar_t CSBuffer[256];
+	memset(CSBuffer, 0, sizeof(CSBuffer));
+	m_Buffer.GetLine(m_Buffer.LineFromChar(-1), CSBuffer, sizeof(CSBuffer));
+	CString LastLine = CSBuffer;
+	int n, m;
+	m_Buffer.GetSel(n, m);
+	m_Buffer.ReplaceSel(L"\r\n", TRUE);
+	m += 2; n = m;
+	m_Buffer.SetSel(n, m);
+	int i = 0;
+	CString CStmp;
+	CStmp.Empty();
+	do
+	{
+		CStmp = LastLine.Mid(i, 1);
+		if (CStmp == L" ")
+		{
+			m_Buffer.ReplaceSel(L" ", FALSE);
+			i++;
+		}
+		else if (CStmp == L"\t")
+		{
+			m_Buffer.ReplaceSel(L"\t", FALSE);
+			i++;
+		}
+		else break;
+	} while (true);
+
 }
 
 BOOL DlgMain::SaveAS()
@@ -233,10 +274,7 @@ void DlgMain::OnFileExit()
 void DlgMain::OnEditUndo()
 {
 	// TODO: 在此添加命令处理程序代码
-	CString* tmp = tmpBuffer1;
-	m_Buffer.SetWindowTextW(*tmpBuffer1);
-	tmpBuffer1 = tmpBuffer2;
-	tmpBuffer2 = tmp;
+	m_Buffer.Undo();
 }
 
 
@@ -309,12 +347,6 @@ void DlgMain::OnEnChangeBuffer()
 	if (!List.IsChanged)
 	{
 		List.IsChanged = TRUE;
-		m_Buffer.GetWindowTextW(*tmpBuffer2);
-	}
-	else
-	{
-		*tmpBuffer1 = *tmpBuffer2;
-		m_Buffer.GetWindowTextW(*tmpBuffer2);
 	}
 }
 
