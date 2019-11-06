@@ -24,71 +24,64 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Check.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
     <ClInclude Include="Gurth Editor Launcher.h">
-      <Filter>头文件</Filter>
+      <Filter>Headers</Filter>
     </ClInclude>
     <ClInclude Include="Gurth Editor LauncherDlg.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="stdafx.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="targetver.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="Resource.h">
-      <Filter>头文件</Filter>
+      <Filter>Headers</Filter>
     </ClInclude>
     <ClInclude Include="RegistKey.h">
-      <Filter>头文件</Filter>
+      <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="Check.h">
-      <Filter>头文件</Filter>
+    <ClInclude Include="Resource.h">
+      <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="etc.h">
-      <Filter>头文件</Filter>
+    <ClInclude Include="stdafx.h">
+      <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="ExtraLib\libMD5\md5.h">
+    <ClInclude Include="targetver.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ExtraLib\cppmd5\md5.h">
       <Filter>ExtraLib\Headers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Check.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
     <ClCompile Include="Gurth Editor Launcher.cpp">
-      <Filter>源文件</Filter>
+      <Filter>Sources</Filter>
     </ClCompile>
     <ClCompile Include="Gurth Editor LauncherDlg.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="stdafx.cpp">
-      <Filter>源文件</Filter>
+      <Filter>Sources</Filter>
     </ClCompile>
     <ClCompile Include="RegistKey.cpp">
-      <Filter>源文件</Filter>
+      <Filter>Sources</Filter>
     </ClCompile>
-    <ClCompile Include="Check.cpp">
-      <Filter>源文件</Filter>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Sources</Filter>
     </ClCompile>
-    <ClCompile Include="etc.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="ExtraLib\libMD5\md5.c">
+    <ClCompile Include="ExtraLib\cppmd5\md5.cpp">
       <Filter>ExtraLib\Sources</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="res\GurthEditorLauncher.rc2">
+      <Filter>Resources</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
     <ResourceCompile Include="GurthEditorLauncher.rc">
-      <Filter>资源文件</Filter>
+      <Filter>Resources</Filter>
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="res\GurthEditorLauncher.rc2">
-      <Filter>资源文件</Filter>
-    </None>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <Image Include="res\Gurth Editor Launcher.ico">
-      <Filter>资源文件</Filter>
+      <Filter>Resources</Filter>
     </Image>
   </ItemGroup>
 </Project>

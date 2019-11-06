@@ -1,9 +1,13 @@
 #include "stdafx.h"
+#include <string>
 #include "etc.h"
-#include "ExtraLib/libMD5/md5.h"
+#include "ExtraLib/cppmd5/md5.h"
+
+using namespace std;
 
 CString MD5_Transcode(CString Src)
 {
+	/*
 	md5_byte_t* data = (md5_byte_t*)Src.GetBuffer(Src.GetLength());
 	md5_byte_t digest[16];
 	md5_state_t md5StateT;
@@ -22,6 +26,15 @@ CString MD5_Transcode(CString Src)
 	CString ShowResult;
 	ShowResult.Empty();
 	ShowResult.Format(L"%s", md5String);
-
+	*/
+	CString ShowResult;
+	ShowResult.Empty();
 	return ShowResult;
+}
+
+const char* MD5_TranscodeA(char* src)
+{
+	MD5 md5(src);
+	string result = md5.md5();
+	return result.c_str();
 }

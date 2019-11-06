@@ -3,6 +3,7 @@
 //
 
 #include "stdafx.h"
+#include <string>
 #include "Gurth Editor Launcher.h"
 #include "Gurth Editor LauncherDlg.h"
 #include "afxdialogex.h"
@@ -14,7 +15,6 @@
 
 // Global variable
 
-CString Key_md5 = L"㑆㘷㠰㝃䑆㜵䈴㐲㜹〶〵㑂㌴䙆䐸䘱찀쳌쳌쳌쳌쳌Ȁ";
 
 // 用于应用程序“关于”菜单项的 CAboutDlg 对话框
 
